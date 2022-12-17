@@ -8,12 +8,15 @@ call vundle#begin()            " required
         Plugin 'VundleVim/Vundle.vim'  " required
         " my plugins here
 
-        " Plugin 'dracula/vim'
+        " linting (syntax checking and semantic errors)
         Plugin 'dense-analysis/ale'
         
-        " https://github.com/vim-airline/vim-airline
+        " status/tabline
         Plugin 'vim-airline/vim-airline'
         Plugin 'vim-airline/vim-airline-themes'
+
+        " A collection of language packs for vim
+        Plugin 'sheerun/vim-polyglot'
 
         " end of plugins
 call vundle#end()               " required
