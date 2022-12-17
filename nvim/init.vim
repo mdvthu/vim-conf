@@ -10,6 +10,10 @@ call vundle#begin()            " required
 
         " Plugin 'dracula/vim'
         Plugin 'dense-analysis/ale'
+        
+        " https://github.com/vim-airline/vim-airline
+        Plugin 'vim-airline/vim-airline'
+        Plugin 'vim-airline/vim-airline-themes'
 
         " end of plugins
 call vundle#end()               " required
@@ -19,6 +23,9 @@ set number
 syntax on
 set background=dark
 colorscheme PaperColor
+" select status bar theme
+" https://github.com/vim-airline/vim-airline/wiki/Screenshots
+let g:airline_theme='bubblegum'
 set showcmd
 " bash-like tab completions
 set wildmode=longest,list
