@@ -11,7 +11,7 @@ Highlights:
 ## Installation
 
 `install.sh` copies configuration to user neovim directory, overwriting old
-onfig and installs plugins
+config and installs plugins.
 
 ## References
 * [Real Python: VIM and Python](https://realpython.com/vim-and-python-a-match-made-in-heaven/)
