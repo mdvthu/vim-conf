@@ -2,11 +2,14 @@
 # Installation script
 
 CONF_DIR="${HOME}/.config"
-VIMRC_DIR="${CONF_DIR}/nvim/"
+VIMRC_DIR="${CONF_DIR}/nvim"
 
-if [ -d $VIMRC_DIR ]; then
-  echo $VIMRC_DIR exists. Exiting.
-  exit 1
+if [ -d "$VIMRC_DIR" ]; then
+  echo "$VIMRC_DIR" exists
+  read -p "Would you like to replace the current nvim config? " choice
+  [[ "$choice" == [Yy]* ]] || { echo exiting; exit 1 ; }
+  rm -rf "${VIMRC_DIR}.bak"
+  mv -f "${VIMRC_DIR}" "${VIMRC_DIR}.bak"
 fi
 
 # Install Vundle
