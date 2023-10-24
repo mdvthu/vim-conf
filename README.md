@@ -17,3 +17,5 @@ config and installs plugins.
 * [Real Python: VIM and Python](https://realpython.com/vim-and-python-a-match-made-in-heaven/)
 * [Vim From Scratch: Vim for Python in 2020](https://www.vimfromscratch.com/articles/vim-for-python)
 * [ramezanpour.net: ultimate Neovim configuration for Python](https://ramezanpour.net/post/2021/04/24/My-ultimate-Neovim-configuration-for-Python-development)
+* [Vim scripting cheatsheet](https://devhints.io/vimscript)
+* [Learn Vimscript the Hard Way](https://learnvimscriptthehardway.stevelosh.com/)
