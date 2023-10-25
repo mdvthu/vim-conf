@@ -63,3 +63,6 @@ au BufRead *.yaml,*.yml
   \ if search('apiVersion: ', 'nw') |
   \ setlocal ft=yaml.kube |
   \ endif
+
+" Shortcut for reloading Kubernetes config
+autocmd FileType yaml.kube nmap <leader>c :!kubectl apply -f .<CR>
