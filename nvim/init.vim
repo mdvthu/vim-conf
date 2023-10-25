@@ -10,7 +10,7 @@ call vundle#begin()            " required
 
         " linting (syntax checking and semantic errors)
         Plugin 'dense-analysis/ale'
-        
+
         " status/tabline
         Plugin 'vim-airline/vim-airline'
         Plugin 'vim-airline/vim-airline-themes'
@@ -57,3 +57,9 @@ nmap <leader>v :tabedit $MYVIMRC<CR>
 autocmd BufWritePost init.vim source $MYVIMRC
 
 filetype plugin indent on       " required
+
+" Create a unique filetype for Kubernetes YAML
+au BufRead *.yaml,*.yml
+  \ if search('apiVersion: ', 'nw') |
+  \ setlocal ft=yaml.kube |
+  \ endif
