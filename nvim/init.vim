@@ -49,7 +49,7 @@ endif
 " convert tabs to spaces
 set expandtab
 
-let mapleader = "s"
+let mapleader = " "
 " Make editing config easy
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
@@ -64,5 +64,9 @@ au BufRead *.yaml,*.yml
   \ setlocal ft=yaml.kube |
   \ endif
 
+" Move these to separate filetypes files, when finished!
 " Shortcut for reloading Kubernetes config
 autocmd FileType yaml.kube nmap <leader>c :!kubectl apply -f .<CR>
+" Nginx test/reload config
+autocmd FileType nginx nmap <leader>t :!sudo nginx test<CR>
+autocmd FileType nginx nmap <leader>c :!sudo nginx -s reload<CR>
