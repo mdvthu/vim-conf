@@ -1,6 +1,6 @@
 set nocompatible
 filetype off
-set shell=/bin/sh
+" set shell=/bin/sh
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
@@ -37,15 +37,6 @@ set mouse=a
 set history=200
 
 set smartcase
-
-if has("autocmd")
-  " When editing a file, always jump to the last cursor position
-  autocmd BufReadPost *
-  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-  \   exe "normal g'\"" |
-  \ endif
-endif
-
 " convert tabs to spaces
 set expandtab
 
@@ -53,16 +44,24 @@ let mapleader = " "
 " Make editing config easy
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
-" Reload neovim config, after changes have been written
-autocmd BufWritePost init.vim source $MYVIMRC
+if has("autocmd")
+  " When editing a file, always jump to the last cursor position
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \   exe "normal g'\"" |
+  \ endif
+
+  " Reload neovim config, after changes have been written
+  autocmd BufWritePost init.vim source $MYVIMRC
+
+  " Create a unique filetype for Kubernetes YAML
+  autocmd BufRead *.yaml,*.yml
+    \ if search('apiVersion: ', 'nw') |
+    \ setlocal ft=yaml.kube |
+    \ endif
+endif
 
 filetype plugin indent on       " required
-
-" Create a unique filetype for Kubernetes YAML
-au BufRead *.yaml,*.yml
-  \ if search('apiVersion: ', 'nw') |
-  \ setlocal ft=yaml.kube |
-  \ endif
 
 " Move these to separate filetypes files, when finished!
 " Shortcut for reloading Kubernetes config
