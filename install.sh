@@ -20,3 +20,5 @@ git clone \
 cp -r nvim "$CONF_DIR"
 # Headless install of the plugins
 nvim -c 'PluginInstall' -c 'qa'
+nvim -c 'PluginUpdate' -c 'qa'
+nvim -c 'PluginClean' -c 'qa'
