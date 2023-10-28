@@ -2,11 +2,12 @@
 
 For easy/repeatable install on new machines.
 
-Highlights:
+Features:
 * [Vundle plugin manager](https://github.com/VundleVim/Vundle.vim)
 * [PaperColor theme](https://github.com/NLKNguyen/papercolor-theme)
 * [Asynchronous Lint Engine (ALE)](https://github.com/dense-analysis/ale)
 * [vim-airline status bar](https://github.com/vim-airline/vim-airline)
+* [Kubernetes filetype detection](https://vi.stackexchange.com/questions/43343/additional-filetypes-for-different-types-of-yaml-files)
 
 ## Installation
 
