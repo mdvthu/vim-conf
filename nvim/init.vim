@@ -53,15 +53,9 @@ if has("autocmd")
 
   " Reload neovim config, after changes have been written
   autocmd BufWritePost init.vim source $MYVIMRC
-
-  " Create a unique filetype for Kubernetes YAML
-  autocmd BufRead *.yaml,*.yml
-    \ if search('apiVersion: ', 'nw') |
-    \ setlocal ft=yaml.kube |
-    \ endif
 endif
 
-filetype plugin indent on       " required
+filetype plugin indent on " required
 
 " Move these to separate filetypes files, when finished!
 " Shortcut for reloading Kubernetes config
