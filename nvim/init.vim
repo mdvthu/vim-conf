@@ -1,6 +1,10 @@
 set nocompatible
 filetype off
-" set shell=/bin/sh
+
+" host environment control
+set shell=/bin/bash
+set shellcmdflag=-lc
+let g:python3_host_prog='/usr/bin/python3'
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
