@@ -65,5 +65,5 @@ filetype plugin indent on " required
 " Shortcut for reloading Kubernetes config
 autocmd FileType yaml.kube nmap <leader>c :!kubectl apply -f .<CR>
 " Nginx test/reload config
-autocmd FileType nginx nmap <leader>t :!sudo nginx test<CR>
+autocmd FileType nginx nmap <leader>t :!sudo nginx -t<CR>
 autocmd FileType nginx nmap <leader>c :!sudo nginx -s reload<CR>
